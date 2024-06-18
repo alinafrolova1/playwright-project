@@ -17,12 +17,13 @@ jobs:
           node-version: 18
       - name: Install dependencies
         run: npm ci
-        
+
       - name: Run your tests
         run: npx playwright test
         env:
           HOME: /root
-           - name: Upload Playwright test results
+          
+        - name: Upload Playwright test results
         if: always() # Ensure this step runs even if previous steps fail
         uses: actions/upload-artifact@v2
         with:
